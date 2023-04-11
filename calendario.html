@@ -154,42 +154,42 @@ footer a:link {
 </head>
 <body>
     <div class="">
-        <div id="calendario"></div>
+        <div id="calendari"></div>
       </div>
       <script>
-        var meses = [
-    'Enero',
-    'Febrero',
-    'Marzo',
-    'Abril',
-    'Mayo',
-    'Junio',
-    'Julio',
-    'Augosto',
-    'Septiembre',
-    'Octubre',
-    'Noviembre',
-    'Diciembre'
+        var mesos = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
 ];
 
-var dias = [
-    'Domingo',
-    'Lunes',
-    'Martes',
-    'Miercoles',
-    'Jueves',
-    'Viernes',
-    'Sabado'
+var dies = [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wedensday',
+    'Thursday',
+    'Friday',
+    'Saturday'
 ];
 
-var dias_abr = [
-    'Dom',
-    'Lu',
-    'Ma',
-    'Mie',
-    'Jue',
-    'Vie',
-    'Sab'
+var dies_abr = [
+    'Su',
+    'Mo',
+    'Tu',
+    'We',
+    'Th',
+    'Fr',
+    'Sa'
 ];
 
 Number.prototype.pad = function(num) {
@@ -199,7 +199,7 @@ Number.prototype.pad = function(num) {
     return str += this.toString();
 }
 
-function calendario(widget, data)
+function calendari(widget, data)
 {
 
     var original = widget.getElementsByClassName('actiu')[0];
@@ -244,18 +244,18 @@ function calendario(widget, data)
 
     titol.appendChild(boto_prev);
     titol.appendChild(document.createElement('span')).innerHTML = 
-        meses[data.getMonth()] + '<span class="any">' + data.getFullYear() + '</span>';
+        mesos[data.getMonth()] + '<span class="any">' + data.getFullYear() + '</span>';
 
     titol.appendChild(boto_next);
 
     boto_prev.onclick = function() {
         data.setMonth(data.getMonth() - 1);
-        calendario(widget, data);
+        calendari(widget, data);
     };
 
     boto_next.onclick = function() {
         data.setMonth(data.getMonth() + 1);
-        calendario(widget, data);
+        calendari(widget, data);
     };
 
     fila.appendChild(titol);
@@ -326,7 +326,7 @@ function calendario(widget, data)
 
 }
 
-calendario(document.getElementById('calendari'), new Date());
+calendari(document.getElementById('calendari'), new Date());
 
     </script>
 </body>
